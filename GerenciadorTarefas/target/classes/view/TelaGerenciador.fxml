@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="466.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciadorController">
+   <children>
+      <TabPane fx:id="abas" onMouseClicked="#gerenciarAbas" prefHeight="466.0" prefWidth="734.0" stylesheets="@../../../../../../Users/tiago/Downloads/Locadora-de-Carros-main%20(2)/Locadora-de-Carros-main/3%20Entrega/LocadoradeCarros/src/main/java/view/Styles.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tabCadastrar" style="-fx-background-color: gray; -fx-text-base-color: white;" text="Cadastrar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="695.0" style="-fx-background-color: #f2f5fc;">
+                     <children>
+                        <GridPane layoutX="214.0" layoutY="50.0" prefHeight="163.0" prefWidth="301.0" AnchorPane.leftAnchor="214.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="188.0" prefWidth="188.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nome:" />
+                              <TextField fx:id="txtNome" style="-fx-border-color: #6c6c6c; -fx-border-radius: 5; -fx-background-color: gray; -fx-text-fill: white;" GridPane.rowIndex="1" />
+                              <Label text="Tarefa:" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtTarefa" prefWidth="300.0" style="-fx-border-color: #6c6c6c; -fx-border-radius: 5; -fx-background-color: gray; -fx-text-fill: white;" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="368.0" layoutY="270.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0" minWidth="36.0" mnemonicParsing="false" onAction="#btnCadastrarTarefa" prefHeight="36.0" prefWidth="36.0" style="-fx-base: gray;">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Cadastrar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="326.0" layoutY="270.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0" minWidth="36.0" mnemonicParsing="false" onAction="#btnLimparTarefa" prefHeight="36.0" prefWidth="36.0" style="-fx-base: gray;">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/eraser.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Limpar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="108.0" fitWidth="159.0" layoutX="573.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../Users/tiago/Downloads/Self%20Logotipo.png" />
+                           </image>
+                        </ImageView>
+                        <CheckBox fx:id="ckbCompleted" layoutX="325.0" layoutY="225.0" mnemonicParsing="false" text="Completed" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabConsultar" style="-fx-background-color: gray; -fx-text-base-color: white;" text="Consultar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f2f5fc;">
+                     <children>
+                        <TextField fx:id="txtTarefaConsultar" layoutX="115.0" layoutY="32.0" prefHeight="27.0" prefWidth="312.0" style="-fx-background-color: gray; -fx-border-color: #6c6c6c; -fx-border-radius: 5; -fx-text-fill: white;" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="32.0" />
+                        <Label fx:id="lblNome" layoutX="62.0" layoutY="36.0" prefHeight="17.0" prefWidth="49.0" text="Nome:" />
+                        <Button layoutX="471.0" layoutY="33.0" maxHeight="26.0" maxWidth="26.0" minHeight="26.0" minWidth="26.0" mnemonicParsing="false" onAction="#btnConsultarNome" prefHeight="26.0" prefWidth="26.0" style="-fx-base: #1BB2CF;" AnchorPane.rightAnchor="237.0">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/magnifying-glass.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Buscar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="104.0" layoutY="98.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0" minWidth="36.0" mnemonicParsing="false" onAction="#btnTarefaDeletar" prefHeight="36.0" prefWidth="36.0" style="-fx-base: gray;">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/trash.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Deletar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="62.0" layoutY="98.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0" minWidth="36.0" mnemonicParsing="false" onAction="#btnTarefaAtualizar" prefHeight="36.0" prefWidth="36.0" style="-fx-base: gray;" AnchorPane.leftAnchor="62.0">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/pen-to-square.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Editar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <TableView fx:id="tabelaTarefa" layoutX="62.0" layoutY="177.0" prefHeight="194.0" prefWidth="610.0" style="-fx-base: #21252a; -fx-border-color: #6c6c6c; -fx-border-radius: 5; -fx-background-color: gray;">
+                           <columns>
+                              <TableColumn fx:id="colIdTarefa" editable="false" maxWidth="656.0" minWidth="-1.0" prefWidth="65.0" style="-fx-text-fill: white; -fx-base: gray; -fx-border-color: trasparent; -fx-alignment: center;" text="ID Tarefa" />
+                              <TableColumn fx:id="colNome" editable="false" maxWidth="656.0" minWidth="-1.0" prefWidth="148.0" style="-fx-text-fill: white; -fx-base: gray; -fx-border-color: trasparent; -fx-alignment: center;" text="Nome" />
+                              <TableColumn fx:id="colTarefa" editable="false" maxWidth="656.0" minWidth="-1.0" prefWidth="250.0" style="-fx-text-fill: white; -fx-base: gray; -fx-border-color: transparent; -fx-alignment: center;" text="Tarefa" />
+                              <TableColumn fx:id="colStatus" editable="false" maxWidth="656.0" minWidth="-1.0" prefWidth="145.0" style="-fx-text-fill: white; -fx-base: gray; -fx-border-color: trasparent; -fx-alignment: center;" text="Status" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabEditar" disable="true" style="-fx-background-color: gray; -fx-text-base-color: white;" text="Editar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f2f5fc;">
+                     <children>
+                        <Button layoutX="328.0" layoutY="270.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0" minWidth="36.0" mnemonicParsing="false" onAction="#btnTarefaLimparAtt" prefHeight="36.0" prefWidth="36.0" style="-fx-base: gray;">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/eraser.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Apagar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="370.0" layoutY="270.0" maxHeight="36.0" maxWidth="36.0" minHeight="36.0" minWidth="36.0" mnemonicParsing="false" onAction="#btnTarefaSalvarAtt" prefHeight="36.0" prefWidth="36.0" style="-fx-base: gray;">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="https://raw.githubusercontent.com/fluffyfatec/Front-/main/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Confirmar" />
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <GridPane layoutX="216.0" layoutY="50.0" prefHeight="163.0" prefWidth="300.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="188.0" prefWidth="188.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nome:" />
+                              <Label text="Tarefa:" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtNomeEditar" style="-fx-border-color: #6c6c6c; -fx-border-radius: 5; -fx-background-color: gray; -fx-text-fill: white;" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtTarefaEditar" style="-fx-border-color: #6c6c6c; -fx-border-radius: 5; -fx-background-color: gray; -fx-text-fill: white;" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <CheckBox fx:id="ckbCompletedEditar" layoutX="323.0" layoutY="227.0" mnemonicParsing="false" text="Completed" />
+                        <ImageView fitHeight="108.0" fitWidth="159.0" layoutX="573.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../Users/tiago/Downloads/Self%20Logotipo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
